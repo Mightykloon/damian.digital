@@ -606,7 +606,7 @@
     /* — Stats tile — */
     .stats-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem 2rem;
     }
 
@@ -811,18 +811,25 @@
       letter-spacing: 0.04em;
     }
 
-    .alias-row:hover .alias-name { color: #ffff55; }
+    .alias-row:hover .alias-name {
+      background: var(--chrome-text);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: chromeSheen 2.5s linear infinite;
+    }
 
     /* the title-screen splash */
     .splash-text {
       position: absolute;
-      top: 0.4rem;
-      right: 0.9rem;
+      top: -0.55rem;
+      right: -0.7rem;
       font-family: 'Minecraftia', 'Courier New', monospace;
       font-size: 0.72rem;
       color: #ffff55;
       text-shadow: 2px 2px 0 #3f3f15;
-      transform: rotate(-12deg);
+      transform: rotate(12deg);
       transform-origin: center;
       animation: splashPulse 0.5s ease-in-out infinite alternate;
       pointer-events: none;
@@ -831,8 +838,8 @@
     }
 
     @keyframes splashPulse {
-      from { transform: rotate(-12deg) scale(1); }
-      to   { transform: rotate(-12deg) scale(1.09); }
+      from { transform: rotate(12deg) scale(1); }
+      to   { transform: rotate(12deg) scale(1.09); }
     }
 
     /* — Marquee strip — */
@@ -1275,7 +1282,7 @@
       }
 
       .t-photo { min-height: 0; aspect-ratio: 4 / 5; }
-      .stats-row { grid-template-columns: repeat(4, 1fr); }
+      .stats-row { grid-template-columns: repeat(3, 1fr); }
     }
 
     /* Phone: single column */
@@ -1518,12 +1525,20 @@
             <div class="stat-label">Years designing</div>
           </div>
           <div>
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years networking experience</div>
+          </div>
+          <div>
             <div class="stat-number">&#8593; 85%</div>
             <div class="stat-label">Brand consistency lift</div>
           </div>
           <div>
             <div class="stat-number">$20K+</div>
             <div class="stat-label">Revenue from $50 budget</div>
+          </div>
+          <div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Pending U.S. patents, Nullberry</div>
           </div>
           <div>
             <div class="stat-number">3</div>
@@ -1582,6 +1597,13 @@
             <img src="img/mightykloon.png" alt="mightykloon skin face" class="alias-face">
             <div>
               <div class="alias-name">mightykloon</div>
+              <div class="alias-meta">NameMC</div>
+            </div>
+          </a>
+          <a href="https://namemc.com/profile/Hysentials" target="_blank" rel="noopener" class="alias-row">
+            <img src="img/hysentials.png" alt="Hysentials skin face" class="alias-face">
+            <div>
+              <div class="alias-name">Hysentials</div>
               <div class="alias-meta">NameMC</div>
             </div>
           </a>
