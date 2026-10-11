@@ -48,7 +48,8 @@
       --gutter: clamp(1rem, 4vw, 2.5rem);
       --max: 1180px;
       --ext: 28px;                              /* how far frame lines overhang */
-      --gap-head: clamp(2.25rem, 4.5vw, 3.5rem);  /* clear space around section titles */
+      --gap-above: clamp(4.5rem, 9vw, 7rem);    /* between one section and the next title */
+      --gap-below: clamp(0.85rem, 1.5vw, 1.1rem); /* title to the grid it labels: kept tight */
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -426,9 +427,10 @@
     /* ═══════════════════════════════════════
        TYPE & BUTTONS
        ═══════════════════════════════════════ */
-    /* same clear space above and below every section title: measured from the
-       tips of the frame overhangs, not the frames themselves */
-    .head { margin-bottom: calc(var(--ext) + var(--gap-head)); }
+    /* titles sit close to the grid they label and far from the one before, so
+       each reads as its group's heading. Gaps are measured from the tips of the
+       frame overhangs (--ext), not the frames themselves */
+    .head { margin-bottom: calc(var(--ext) + var(--gap-below)); }
 
     .head h2 {
       font-weight: 600;
@@ -583,7 +585,7 @@
     /* ═══════════════════════════════════════
        SECTIONS
        ═══════════════════════════════════════ */
-    .section { padding: calc(var(--ext) + var(--gap-head)) 0 0; }
+    .section { padding: calc(var(--ext) + var(--gap-above)) 0 0; }
 
     .label { color: var(--ink-3); display: flex; align-items: center; gap: 0.5rem; }
 
